@@ -1195,6 +1195,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Navigate to site'**
   String get navigateTo;
+
+  /// No description provided for @cannotCloseLastValve.
+  ///
+  /// In en, this message translates to:
+  /// **'Action denied: at least one valve must remain open.'**
+  String get cannotCloseLastValve;
 }
 
 class _AppLocalizationsDelegate

@@ -569,4 +569,8 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get navigateTo => 'Naviguer vers le chantier';
+
+  @override
+  String get cannotCloseLastValve =>
+      'Action refusée : au moins une vanne doit rester ouverte.';
 }

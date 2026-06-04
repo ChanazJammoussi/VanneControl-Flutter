@@ -567,4 +567,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get navigateTo => 'Navigate to site';
+
+  @override
+  String get cannotCloseLastValve =>
+      'Action denied: at least one valve must remain open.';
 }

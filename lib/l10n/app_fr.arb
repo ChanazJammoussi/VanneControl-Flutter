@@ -182,5 +182,6 @@
   "useCurrentLocation": "Utiliser la position actuelle",
   "locationPermissionDenied": "Permission de localisation refusée",
   "locationError": "Impossible d'obtenir la position. Réessayez.",
-  "navigateTo": "Naviguer vers le chantier"
+  "navigateTo": "Naviguer vers le chantier",
+  "cannotCloseLastValve": "Action refusée : au moins une vanne doit rester ouverte."
 }

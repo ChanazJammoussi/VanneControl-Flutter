@@ -199,5 +199,6 @@
   "useCurrentLocation": "Use current location",
   "locationPermissionDenied": "Location permission denied",
   "locationError": "Unable to get location. Please try again.",
-  "navigateTo": "Navigate to site"
+  "navigateTo": "Navigate to site",
+  "cannotCloseLastValve": "Action denied: at least one valve must remain open."
 }

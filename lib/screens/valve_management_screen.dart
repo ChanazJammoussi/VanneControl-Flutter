@@ -17,7 +17,33 @@ class ValveManagementScreen extends ConsumerWidget {
     AppLocalizations l10n,
     DeviceModel device,
     PistonModel piston,
+    int valveLimit,
   ) {
+    if (piston.isActive) {
+      final devices = ref.read(valveProvider).devices;
+      final activeCount = devices
+          .expand((d) => d.pistons)
+          .where((p) => p.pistonNumber <= valveLimit && p.isActive)
+          .length;
+
+      if (activeCount <= 1) {
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.error),
+            content: Text(l10n.cannotCloseLastValve),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(l10n.ok),
+              ),
+            ],
+          ),
+        );
+        return;
+      }
+    }
+
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -132,7 +158,7 @@ class ValveManagementScreen extends ConsumerWidget {
                               l10n: l10n,
                               valveLimit: valveLimit,
                               onTap: (device, piston) => _showConfirmDialog(
-                                context, ref, l10n, device, piston,
+                                context, ref, l10n, device, piston, valveLimit,
                               ),
                             ),
             ),
